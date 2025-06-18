@@ -109,21 +109,17 @@ impl ServerMonitorApp {
 
     // 加载默认服务器配置
     fn load_default_servers(&mut self) {
-        let default_ip = "143.86.170.164";
-        let default_ports = [8025, 8081, 8000, 3000, 8061, 8080, 8086, 8082, 11434];
-
         let mut servers = self.servers.lock().unwrap();
         servers.clear();
 
-        for port in default_ports {
-            servers.push(Server {
-                name: format!("服务器-{}", port),
-                ip: default_ip.to_string(),
-                port,
-                status: ServerStatus::Unchecked,
-                url: format!("http://{}:{}", default_ip, port),
-            });
-        }
+        // 添加一个默认的测试服务器
+        servers.push(Server {
+            name: "测试服务".to_string(),
+            ip: "127.0.0.1".to_string(),
+            port: 8080,
+            status: ServerStatus::Unchecked,
+            url: "http://127.0.0.1:8080".to_string(),
+        });
 
         println!("使用默认服务器配置");
     }
