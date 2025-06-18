@@ -4,7 +4,7 @@
 
 ## 界面预览
 
-<img src=".//view.png" alt="view" style="zoom:30%;" />
+<img src="view.png" alt="view" style="zoom:30%;" />
 
 ## 功能特性
 
